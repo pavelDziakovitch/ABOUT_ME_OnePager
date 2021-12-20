@@ -1,0 +1,633 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+body {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+p {
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+}
+#layout {
+	display: flex;
+	background-color: blueviolet;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#myself, #motivation {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(0, 0, 0);
+	width: 100%;
+	min-height: 400px;
+	justify-content: center;
+	align-items: center;
+}
+#contact {
+	display: flex;
+	background-color: black;
+	width: 100%;
+	min-height: 400px;
+	align-items: center;
+	flex-direction: column;
+}
+#imprintSmall {
+	right: 0%;
+	top: 40%;
+	width: 20px;
+	line-height: 20px;
+	height: 20%;
+	position: fixed;
+	text-align: center;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.856);
+	z-index: 2;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	margin: 0;
+	font-family: Montserrat Subrayada, sans-serif;
+	color: black;
+	font-weight: 200;
+	font-size: 16px;
+	opacity: 0.95;
+	transition: all 1.5s ease;
+	z-index: 100;
+}
+#imprintSmall:hover {
+	transition: all 1s ease;
+	width: 35px;
+	line-height: 35px;
+	font-size: 22px;
+	transition: all 0.6s ease-in-out 0s;
+	color: rgb(0, 196, 245);
+	background-color: rgb(58, 58, 58);
+}
+#life {
+	background-color: black;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+#projects {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	width: 100%;
+	min-height: 300px;
+	position: relative;
+	z-index: 10;
+}
+nav {
+	width: 60%;
+	align-self: center;
+	justify-content: space-between;
+	align-items: center;
+}
+#navContact {
+	display: flex;
+	width: 20%;
+	height: auto;
+	justify-content: end;
+}
+.navChildren {
+	list-style: none;
+}
+.navChildren li {
+	display: inline-block;
+	text-align: center;
+}
+.navChildren li a {
+	transition: all 0.4s ease 0s;
+}
+.navChildren li a:hover {
+	color: rgb(0, 196, 245);
+	font-weight: 500;
+}
+#logoContainter {
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#logoNavbar {
+	display: flex;
+	height: 40px;
+	cursor: pointer;
+}
+img#logo {
+	width: 80%;
+	height: 200px;
+	margin-left: 37, 5%;
+}
+li, a, button {
+	font-family: Montserrat Subrayada, sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	color: #edf0f1;
+	text-decoration: none;
+}
+ul {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 0px;
+}
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0.2% 10%;
+	background-color: rgba(15, 15, 15, 0.993);
+	position: fixed;
+	width: 80%;
+	top: -100px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	transition: all 0.6s ease-in-out 0s;
+	z-index: 99;
+}
+button {
+	background-color: rgba(0, 173, 216, 0.911);
+	border: none;
+	border-radius: 50px;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	line-height: 2em;
+	align-self: right;
+	width: 100%;
+}
+button:hover {
+	background-color: rgb(1, 196, 196);
+}
+#hiddenImprint {
+	top: 25%;
+	width: 600px;
+	height: 50%;
+	background-color: rgba(255, 255, 255, 0.966);
+	position: fixed;
+	right: -600px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	text-align: center;
+	opacity: 0;
+	z-index: 99;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	color: rgba(15, 15, 15, 0.89);
+	line-height: 24px;
+	min-height: 200px;
+}
+#imprintText {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: rgb(15, 15, 15);
+	line-height: 24px;
+	font-weight: bold;
+}
+#imprintLink {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(0, 196, 245);
+}
+#cb {
+	display: none;
+}
+#cb:checked~#hiddenImprint {
+	right: 0;
+	opacity: 1;
+	transition: opacity 1s ease-in, right 1s ease-in;
+}
+#cb:not(:checked)~#hiddenImprint {
+	transition: opacity 1s ease-out, right 1s ease-out;
+}
+#cb:checked~#toggle>#imprintSmall {
+	color: rgba(0, 136, 169, 1);
+	background-color: hsla(236, 100%, 0%, 0);
+	width: 35px;
+	line-height: 35px;
+	transition: all 1s ease;
+	font-size: 22px;
+}
+#textContent {
+	color: blanchedalmond;
+	font-family: 'Montserrat';
+	text-align: center;
+	max-width: 90%;
+	font-size: 18px;
+}
+#icons {
+	width: 100px;
+	height: 100px;
+	border-radius: 6px;
+}
+#iconDog {
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	border-radius: 6px;
+	background-image: url("img/hund.png");
+	transition: background-image 0.2s ease;
+	cursor: pointer;
+}
+#iconDog:hover {
+	background-image: url("img/momo.jpg");
+	transition: background-image 0.2s ease;
+}
+#hobbyIcons {
+	display: flex;
+	margin-top: 2em;
+	justify-content: center;
+	width: 80%;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#hobbyIconsChild {
+	flex-direction: column;
+}
+#hobbyIcons p {
+	color: blanchedalmond;
+	justify-content: space-around;
+	font-family: 'Montserrat';
+	font-size: 18px;
+	text-align: center;
+	flex-direction: row;
+	width: 100%;
+	line-height: 21px;
+	margin-top: 1em;
+}
+#hobbyIconsText {
+	width: 80%;
+	display: flex;
+}
+#name {
+	position: relative;
+	display: block;
+	font-family: 'Montserrat', cursive;
+	color: white;
+	font-weight: bold;
+	font-size: 46px;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+	color: rgb(0, 132, 255);
+	flex-direction: row;
+	width: 100%;
+	text-align: center;
+	z-index: 70;
+}
+#myselfContainer {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	align-self: center;
+	width: 80%;
+}
+#myselfContainerText {
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#beruflich, #bildung {
+	width: 100%;
+	margin: 0;
+	align-items: center;
+	justify-content: center;
+}
+#beruflich table p, #bildung table p {
+	display: block;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	margin: 0;
+	color: blanchedalmond;
+	font-size: 18px;
+	font-family: 'Montserrat';
+}
+#contentLife {
+	display: flex;
+	flex-direction: row;
+	width: 95%;
+}
+#textLifeHead {
+	color: blanchedalmond;
+	font-family: 'Montserrat';
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	color: rgb(0, 255, 255, 100);
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.date {
+	font-weight: bold;
+	width: 30%;
+	text-align: center;
+	margin: 0;
+	vertical-align: top;
+}
+.tabletext>p {
+	width: 100%;
+	line-height: 24px;
+	text-align: left;
+	margin: 0;
+}
+.tabletext {
+	margin: 0;
+	font-size: 30px;
+	font-family: 'Montserrat';
+}
+table {
+	border-spacing: 15px;
+	width: 100%;
+}
+tr {
+	width: 50%;
+}
+form {
+	text-align: center;
+	width: 70%;
+}
+input {
+	margin: 1em;
+	width: 20%;
+	height: 2em;
+	text-align: center;
+	border-radius: 20px;
+	border-color: black;
+	border: 3px solid;
+}
+#projectNames {
+	color: blanchedalmond;
+	font-family: 'Montserrat';
+	font-size: 25px;
+	text-align: center;
+	vertical-align: middle;
+	width: 50%;
+	height: auto;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+}
+#projectPreview {
+	position: absolute;
+	height: 500px;
+	width: auto;
+	border-radius: 10px;
+	transition: all 1s ease-in-out;
+	margin: auto;
+}
+#projectPreview:hover {
+	filter: blur(8px);
+	opacity: 0.2;
+	transition: all 2s ease-in-out;
+}
+#blogpost {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 600px;
+}
+#email, #phone, #lastname, #firstname, #sendRequest {
+	border-color: black;
+}
+#question {
+	height: 200px;
+	width: 90%;
+}
+#sendRequest {
+	background-color: rgba(0, 255, 110, 1);
+	color: black;
+	font-weight: bold;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#sendRequest:hover {
+	border-color: rgba(0, 255, 110, 1);
+}
+#firstname:hover {
+	border-color: rgb(0, 132, 255);
+}
+#lastname:hover {
+	border-color: rgb(0, 206, 255, 100);
+}
+#email:hover {
+	border-color: rgb(0, 255, 255, 100);
+}
+#phone:hover {
+	border-color: rgb(0, 255, 171, 100);
+}
+#question:hover {
+	border-color: rgb(0, 255, 110, 100);
+}
+#meVr {
+	display: flex;
+	height: 300px;
+	width: 260px;
+	border-radius: 10px;
+	align-self: center;
+}
+#meFace {
+	display: flex;
+	height: 300px;
+	width: auto;
+	border-radius: 10px;
+	align-self: center;
+	z-index: 50;
+}
+#credit p, #credit a {
+	text-align: center;
+	font-family: 'Montserrat', ;
+	font-size: 14px;
+	color: rgba(15, 15, 15, 0.89);
+	line-height: 24px;
+	font-weight: bold;
+}
+/*Vertikal*/
+
+@media screen and (max-height: 800px) {
+	#hiddenImprint {
+		height: 85%;
+		top: 7.5%;
+	}
+}
+@media screen and (min-height: 901px) {
+	#hiddenImprint {
+		height: 40%;
+		top: 30%;
+	}
+}
+@media screen and (max-height: 800px) {
+	#imprintSmall {
+		top: 20%;
+		height: 60%;
+	}
+}
+@media screen and (max-height: 600px) {
+	#imprintSmall {
+		top: 30%;
+		height: 40%;
+	}
+}
+@media screen and (max-height: 450px) {
+	#hiddenImprint {
+		top: 10%;
+		height: 350px
+	}
+}
+/*Horizontal*/
+
+@media screen and (max-width: 1300px) {
+	button {
+		width: 70%;
+	}
+	#navContact {
+		width: 20%;
+	}
+	#logoContainer {
+		width: 20%;
+	}
+	#logoNavbar {
+		width: 60%;
+	}
+	nav {
+		justify-content: space-between;
+	}
+	#beruflich table p, #bildung table p {
+		font-size: 15px;
+	}
+	table {
+		border-spacing: 10px;
+	}
+	#contentLife {
+		width: 97%;
+	}
+	#name {
+		margin-bottom: 0.3em;
+		margin-top: 0.5em;
+		font-size: 30px;
+	}
+	#textLifeHead {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	#blogpost {
+		height: 500px;
+		;
+	}
+	#sendRequest {
+		width: 40%;
+		height: 2em;
+	}
+	input {
+		width: 40%;
+	}
+}
+@media screen and (max-width: 1100px) {
+	#li, a, button {
+		font-size: 16px;
+	}
+	div#myselfContainer {
+		flex-direction: column;
+	}
+	#name {
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+	#meVr, #meFace {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+	div p#textContent {
+		font-size: 24px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	#li, a, button {
+		font-size: 12px;
+	}
+}
+@media screen and (max-width: 940px) {
+	div#myselfContainer {
+		flex-direction: column;
+		width: 90%;
+	}
+	#name {
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+	#meVr, #meFace {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+	div p#textContent {
+		font-size: 28px;
+	}
+	input {
+		width: 70%;
+		height: 2em;
+		font-size: 24px;
+		margin: 5px;
+	}
+	#sendRequest {
+		font-size: 18px;
+	}
+}
+@media screen and (max-width: 650px) {
+	#li, a, button {
+		font-size: 14px;
+	}
+	ul.navChildren {
+		flex-direction: column;
+	}
+	button {
+		width: 100%;
+	}
+	#logoContainer {
+		width: 35%;
+	}
+	#logoNavbar {
+		width: 100%;
+		height: auto;
+	}
+	nav {
+		width: 30%;
+	}
+	header {
+		justify-content: space-around;
+	}
+	#navContact {
+		width: 35%;
+	}
+	#sendRequest {
+		font-size: 13px;
+		font-weight: bold;
+		width: 80%;
+	}
+}
+@media screen and (max-width: 490px) {
+	#hobbyIconsText, #hobbyIcons {
+		width: 100%;
+	}
+}
